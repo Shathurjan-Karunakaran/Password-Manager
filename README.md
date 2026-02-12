@@ -204,7 +204,7 @@ Encrypted Password: "gAAAAABnx4k2xY9zK...dQ=="
         └────────────┬───────────────┘
                      ↓
      ┌──────────────────────────────────┐
-     │ PBKDF2 Derivation (1.2M rounds)│
+     │ PBKDF2 Derivation (1.2M rounds)  │
      │ master_pwd + salt → 32-byte key  │
      └────────────┬─────────────────────┘
                   ↓
@@ -214,7 +214,7 @@ Encrypted Password: "gAAAAABnx4k2xY9zK...dQ=="
                  ↓
         ┌──────────────────┐        ┌─────────────┐
         │  Key Matches?    │        │ Wrong: Try  │
-        │  ✅ YES ❌ NO    │        │ Again (3x)  │
+        │  ✅ YES ❌ NO   │        │ Again (3x)  │
         └────┬─────────────┘        └─────────────┘
              ↓
     ┌────────────────────────┐
