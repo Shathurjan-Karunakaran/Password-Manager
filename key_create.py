@@ -11,7 +11,12 @@ def get_salt():
         with open(salt_file, 'rb') as f:
             return f.read()
     except FileNotFoundError:
-        print("Error: salt.bin not found. please run the setup!")
+        # Create salt if it doesn't exist
+        salt = os.urandom(16)
+        with open(salt_file, 'wb') as f:
+            f.write(salt)
+        print(f"Salt created and saved to {salt_file}")
+        return salt
 
 def create_key(master_pwd):
     # key = Fernet.generate_key() # generate a key and save it into a file

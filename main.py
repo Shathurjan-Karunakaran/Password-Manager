@@ -17,13 +17,16 @@ fer = Fernet(stored_key)
 # The decode() is take the bytes and convert it to string
 
 def view():
-    with open("passwords.txt", "r") as f:
-        for line in f.readlines():
-            data = line.rstrip() # get did of the newline character in the end
-            if not data: # skip empty lines
-                continue
-            user, passw = data.split("|")
-            print("username:", user, "|", "password:", fer.decrypt(passw.encode()).decode())
+    try:
+        with open("passwords.txt", "r") as f:
+            for line in f.readlines():
+                data = line.rstrip() # get did of the newline character in the end
+                if not data: # skip empty lines
+                    continue
+                user, passw = data.split("|")
+                print("username:", user, "|", "password:", fer.decrypt(passw.encode()).decode())
+    except FileNotFoundError:
+        print("No passwords stored yet. Add a password first!")
 
 # what the split do: "hello|kumar|yes|2" -> ["hello", "shathu"], "yes", "2"]
 # only use 'w' mode to overwrites the file, if you don't wann overwrites it use 'a' mod
