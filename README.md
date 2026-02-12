@@ -258,10 +258,6 @@ Here are some enhancement ideas:
 
 Contributions are welcome! Feel free to fork this repository and submit pull requests.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Disclaimer
 
 This password manager is provided as an educational tool. While it uses proper encryption libraries, it's recommended for learning purposes. For critical password management in production environments, use established password managers like KeePass, Bitwarden, or 1Password.
